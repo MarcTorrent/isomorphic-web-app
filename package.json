@@ -1,0 +1,71 @@
+{
+  "name": "isomorphic-web-app",
+  "version": "0.0.1",
+  "description": "Boilerplate for reactjs isomorphic web apps",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js node --harmony .",
+    "dev": "npm run start & npm run launch",
+    "launch": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "validate-webpack": "webpack-validator webpack.config.js",
+    "test": "mocha --compilers js:babel-core/register,css:./test/support/css-null-compiler --require ./test/support/browser.js --recursive ./test/src",
+    "test:watch": "npm run test -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MarcTorrent/isomorphic-web-app"
+  },
+  "keywords": [
+    "reactjs",
+    "redux",
+    "react-router",
+    "isomorphic",
+    "server",
+    "side",
+    "rendering"
+  ],
+  "author": "Marc Torrent",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MarcTorrent/isomorphic-web-app/issues"
+  },
+  "homepage": "https://github.com/MarcTorrent/isomorphic-web-app",
+  "devDependencies": {
+    "babel-core": "^6.2.1",
+    "babel-eslint": "^6.0.4",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015-webpack": "^6.4.1",
+    "babel-preset-react": "^6.1.18",
+    "babel-preset-stage-1": "^6.1.18",
+    "chai": "^3.5.0",
+    "css-loader": "^0.23.1",
+    "enzyme": "^2.3.0",
+    "eslint": "^1.4.3",
+    "eslint-plugin-react": "^3.3.2",
+    "jsdom": "^8.1.0",
+    "mocha": "^2.4.5",
+    "node-sass": "^3.7.0",
+    "react-addons-test-utils": "^0.14.7",
+    "react-hot-loader": "^1.3.0",
+    "sass-loader": "^3.2.0",
+    "sinon": "^1.17.4",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0",
+    "webpack-hot-middleware": "^2.10.0",
+    "webpack-validator": "^2.1.3"
+  },
+  "dependencies": {
+    "axios": "^0.9.1",
+    "express": "^4.13.3",
+    "history": "^2.1.1",
+    "lodash": "^3.10.1",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "react-redux": "^4.0.0",
+    "react-router": "^2.0.0-rc5",
+    "redux": "^3.0.4",
+    "redux-form": "^4.1.3",
+    "redux-promise": "^0.5.3"
+  }
+}
