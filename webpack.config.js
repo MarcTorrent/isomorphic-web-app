@@ -5,6 +5,7 @@ module.exports = {
   entry: [
     'webpack-dev-server/client?http://127.0.0.1:8080/',
     'webpack/hot/only-dev-server',
+    'bootstrap-loader',
     './src/client.js'
   ],
   output: {
@@ -19,12 +20,19 @@ module.exports = {
   module: {
     loaders: [{
 			test: /\.scss$/,
-			loaders: [ 'style', 'css', 'sass' ]
+			loaders: [ 'style', 'css', 'resolve-url', 'sass' ]
 		}, {
 			test: /\.(js|jsx)$/i,
 			exclude: /(node_modules|bower_components)/,
 			loaders: ['react-hot', 'babel']
-		}]
+		}, {
+      test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      loader: "url?limit=10000"
+    },
+    {
+      test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
+      loader: 'file'
+    }]
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
